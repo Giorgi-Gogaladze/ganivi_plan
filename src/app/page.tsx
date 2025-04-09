@@ -2,8 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <section >
-      main page
+    <section className='realtive w-full h-full' >
     </section>
   )
 }

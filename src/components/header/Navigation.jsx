@@ -2,24 +2,34 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { FaMoon, FaSun } from 'react-icons/fa'
+import Authentication from '@/components/authentication/Authentication'
+import { FcMindMap } from 'react-icons/fc'
 
 const Navigation = () => {
-const[theme, setTheme] = useState('dark')
+const[theme, setTheme] = useState('dark');
+const[isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
 const handleThemeToggle = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
 }
-
 useEffect(() => {
     document.body.classList.remove('light-mode', 'dark-mode');
     document.body.classList.add(`${theme}-mode`)
 },[theme])
 
+const openLoginMoadl = () => {
+    setIsLoginModalOpen((prevState) => !prevState);
+}
+
+
   return (
     <section className='w-full h-[40px] mt-6'>
         <div className='w-full h-full flex justify-between items-center'>
             <Link href={'/'} >
-                <div>
+                <div className='flex gap-1 items-center'>
+                    <FcMindMap
+                    className='text-[32px]'
+                     />
                     <h1 className=' font-firago font-semibold text-[24px] tracking-[1.2] hover:text-[var(--hover-color-primary)] 
                     transition-colors duration-300'>
                         GANIVI-PLAN
@@ -38,13 +48,18 @@ useEffect(() => {
                      hover:text-[var(--hover-color-primary)] transition-colors duration-300'>
                         <div>About Us</div>
                     </Link>
-                    <div className=' flex justify-center items-center w-[100px] h-[30px] rounded-full text-white bg-twitter-blue 
+                    <div 
+                    onClick={openLoginMoadl}
+                    className=' flex justify-center items-center w-[100px] h-[30px] rounded-full text-white bg-twitter-blue 
                     font-firago text-[16px] cursor-pointer shadow-md hover:shadow-lg hover:shadow-twitter-blue/50 transition-all duration-300'>
                         Log In
                     </div>
                 </div>
             </div>
         </div>
+        {isLoginModalOpen && 
+        <Authentication 
+        openLoginMoadl={openLoginMoadl} />}
     </section>
   )
 }
