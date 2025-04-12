@@ -3,15 +3,15 @@ interface Props {
   openLoginMoadl: () => void;
 }
 
-const Authentication = ({openLoginMoadl}: Props) => {
+const Authentication:React.FC<Props> = ({openLoginMoadl}) => {
   return (
     <main 
     onClick={openLoginMoadl}
-    className='realtive w-full h-[80vh] bg-[var(--blurred-bg)] mt-6 flex  justify-center items-center'>
+    className='rlaltive w-full h-[80vh] bg-[var(--blurrer-bg)] backdrop-blur-sm mt-6 flex  justify-center items-center z-20'>
         <div 
         onClick={(e) => e.stopPropagation()}
-        className='w-[400px] rounded-[5px] h-[350px] flex flex-col items-center justify-around bg-[var(--basic)] 
-        shadow-lg py-[30px] gap-4'>
+        className='w-[400px]  h-[350px] flex flex-col items-center justify-around bg-[var(--basic)] 
+        shadow-lg py-[30px] gap-4 z-30'>
             <div className='flex flex-col items-center justify-center gap-4'>
                 <h1 className='text-[var(--background)] font-firago text-[32px] tracking-[0.1rem] font-extralight'>AUTHENTICATE</h1>
                 <p 
