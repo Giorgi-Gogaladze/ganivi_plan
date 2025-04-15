@@ -5,11 +5,11 @@ import { FaSun } from 'react-icons/fa'
 import Authentication from '@/components/authentication/Authentication'
 import Image from 'next/image'
 import { BsMoonStarsFill } from 'react-icons/bs'
+import { UseUser } from '@/app/context/UseProvider'
 
 const Navigation = () => {
+const {isLoginModalOpen, setIsLoginModalOpen} = UseUser();
 const[theme, setTheme] = useState('dark');
-const[isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-
 const handleThemeToggle = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
 }
@@ -37,13 +37,14 @@ const openLoginMoadl = () => {
                         className='w-full h-full object-cover object-center rounded-full'
                         />
                     </div>
-                    <h1 className=' font-firago font-semibold text-[24px] tracking-[1.2] hover:text-[var(--hover-color-primary)] 
-                    transition-colors duration-300'>
+                    <h1 className='relative inline-block font-firago font-semibold text-[24px] tracking-[1.2] cursor-pointer group'>
                         GANIVI-PLAN
+                        <span className='absolute left-0 bottom-[-5px] h-[2px] w-0 bg-[var(--foreground)] transition-all duration-300 group-hover:w-full'></span>
                     </h1>
+
                 </div>
             </Link>
-            <div className='w-[18rem]'>
+            <div className='w-[24rem]'>
                 <div className='flex justify-between items-center h-full'>
                     <div
                     title={`change theme to ${theme === 'light' ? 'dark' : 'light'} mode`}
@@ -52,9 +53,21 @@ const openLoginMoadl = () => {
                     >
                         {theme === 'light' ? <BsMoonStarsFill /> : <FaSun />}
                     </div>
-                    <Link href={'/about'} className=' font-firago font-semibold text-[16px] cursor-pointer tracking-[1.2]
-                     hover:text-[var(--hover-color-primary)] transition-colors duration-300'>
-                        <div>About Us</div>
+                    <Link href={'/indoor-map'}>
+                        <div>
+                           <h1 className='relative inline-block font-firago font-semibold text-[16px] cursor-pointer tracking-[1.2] group'>
+                            Indoor Map
+                            <span className='absolute left-0 bottom-[-5px] h-[2px] bg-[var(--foreground)] w-0 transition-all duration-300 group-hover:w-full'></span>
+                           </h1> 
+                        </div>
+                    </Link>
+                    <Link href={'/about'}>
+                        <div>
+                           <h1 className='relative inline-block font-firago font-semibold text-[16px] cursor-pointer tracking-[1.2] group'>
+                            About Us
+                            <span className='absolute left-0 bottom-[-5px] h-[2px] bg-[var(--foreground)] w-0 transition-all duration-300 group-hover:w-full'></span>
+                           </h1> 
+                        </div>
                     </Link>
                     <div 
                     title='Login to see your subjects table'
@@ -67,8 +80,9 @@ const openLoginMoadl = () => {
             </div>
         </div>
         {isLoginModalOpen && 
-        <Authentication 
-        openLoginMoadl={openLoginMoadl} />}
+        <Authentication
+        openLoginMoadl={openLoginMoadl}/>
+        }
     </section>
   )
 }

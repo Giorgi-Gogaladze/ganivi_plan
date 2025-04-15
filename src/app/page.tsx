@@ -1,20 +1,13 @@
-import MapDisplay from '@/components/filtering/MapDisplay'
 import React from 'react'
 const page = () => {
-  const floors = [
-    {id:1, name: 'I'},
-    {id:2, name: 'II'},
-    {id:3, name: 'III'},
-    {id:4, name: 'IV'},
-    {id:5, name: 'V'},
-    {id:6, name: 'VI'}
-  ]
   return (
-    <section className='realtive w-full min-h-[100vh] mb-[4rem]' >
-      <MapDisplay
-      floors={floors}
-       />
-    </section>
+    <div className='h-[150px] w-full flex flex-col gap-[1rem] items-center '>
+            <h1 className='text-[42px] font-semibold font-firago'>TBILISI STATE UNIVERSITY BUILDING INDOOR PLAN</h1>
+            <p className='text-[14px]'>This website helps TSU students easily navigate the campus and find rooms or lecturers` offices. It provides
+               a user-friendly interface to quickly locate classrooms and faculty offices, so students can focus on their 
+               studies.
+            </p>
+          </div>
   )
 }
 
