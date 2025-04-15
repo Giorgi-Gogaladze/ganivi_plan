@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="px-[8rem]">
+      <body className="xl:px-[8rem] lg:px-[6rem] md:px-[4rem] sm:px-[2rem] px-[1rem]">
         <UseProvider>
           <Navigation />
             {children}

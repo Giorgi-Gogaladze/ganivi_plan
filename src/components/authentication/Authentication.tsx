@@ -8,11 +8,11 @@ const Authentication:React.FC<Props>= ({openLoginMoadl}) => {
   return (
     <main 
     onClick={openLoginMoadl}
-    className='rlaltive w-full min-h-[80vh] bg-[var(--blurrer-bg)] backdrop-blur-sm mt-6 flex  justify-center items-center z-50'>
+    className='rlaltive w-full min-h-[80vh] bg-[var(--blurrer-bg)] backdrop-blur-sm mt-6 flex  justify-center items-center z-40'>
         <div 
         onClick={(e) => e.stopPropagation()}
         className='w-[400px]  h-[350px] flex flex-col items-center justify-around bg-[var(--basic)] 
-        shadow-lg py-[30px] gap-4 z-30'>
+        shadow-lg py-[30px] gap-4 z-50'>
             <div className='flex flex-col items-center justify-center gap-4'>
                 <h1 className='text-[var(--background)] font-firago text-[32px] tracking-[0.1rem] font-extralight'>AUTHENTICATE</h1>
                 <p 
