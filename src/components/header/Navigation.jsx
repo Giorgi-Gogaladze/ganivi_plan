@@ -37,7 +37,7 @@ const openLoginMoadl = () => {
 
 
   return (
-    <section className='w-full h-[40px] mt-6'>
+    <section className='w-full h-[40px] mt-6 relative'>
         <div className='w-full h-full flex justify-between items-center'>
             <Link href={'/'} >
                 <div className='flex gap-2 items-center'>

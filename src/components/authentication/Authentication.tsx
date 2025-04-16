@@ -1,14 +1,23 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
+import { LuEye, LuEyeClosed } from 'react-icons/lu';
 interface Props {
   openLoginMoadl: () => void;
 }
 
 
 const Authentication:React.FC<Props>= ({openLoginMoadl}) => {
+const[shownPass, setShownPass] = useState<true | false>(false);
+
+const handleTypeChange = (e: React.MouseEvent<HTMLButtonElement>) => {
+  e.preventDefault();
+  setShownPass((prev) => !prev)
+}
+
   return (
     <main 
     onClick={openLoginMoadl}
-    className='rlaltive w-full min-h-[95vh] bg-[var(--blurrer-bg)] backdrop-blur-sm mt-6 flex  justify-center items-center z-40'>
+    className='fixed inset-0 w-full h-full bg-[var(--blurrer-bg)] backdrop-blur-sm  flex  justify-center items-center z-50'>
         <div 
         onClick={(e) => e.stopPropagation()}
         className='w-[400px]  h-[350px] flex flex-col items-center justify-around bg-[var(--basic)] 
@@ -27,7 +36,7 @@ const Authentication:React.FC<Props>= ({openLoginMoadl}) => {
                 </p>
             </div>
             <form 
-            className='text-center w-full flex flex-col items-center gap-4 '>
+            className='relative text-center w-full flex flex-col items-center gap-4 '>
                 <input 
                 type="text"
                 placeholder='Username'
@@ -35,10 +44,15 @@ const Authentication:React.FC<Props>= ({openLoginMoadl}) => {
                 border-blue-400 text-[var(--second-text-color)] text-center placeholder:text-center'  />
 
                 <input 
-                type="text"
+                type={shownPass ? 'text' : 'password'}
                 placeholder='Password'
                 className='flex items-center justify-center w-[220px] h-[40px] border rounded-full 
-                border-blue-400 text-[var(--second-text-color)] text-center placeholder:text-center' />
+                border-blue-400 text-[var(--second-text-color)] text-center placeholder:text-center'/>
+                <button 
+                onClick={handleTypeChange}
+                className='absolute bottom-[11px] right-[102px] text-black text-[18px] '>
+                  {shownPass ? <LuEye /> : <LuEyeClosed />}
+                </button>
             </form>
             <button
             className='h-[40px] w-[110px] flex items-center justify-center border rounded-full 

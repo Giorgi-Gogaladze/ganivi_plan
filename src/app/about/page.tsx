@@ -16,7 +16,7 @@ const AboutUs = () => {
        
         <section className='md:col-span-4 row-span-1 w-full h-full  pt-[1rem]'>
           <div className='w-full flex flex-col text-center gap-[1.5rem] items-center'>
-              <div className=' flex flex-col z-20 px-[1rem]'>
+              <div className=' flex flex-col z-10 px-[1rem]'>
                   <h1 className='font-firago text-[5vw] font-bold text-[var(--foreground)]'>About Us</h1>
               </div>
             <p className='text-[14px] font-sans text-[var(--third-text-color)] leading-[1.5rem]'>
