@@ -6,7 +6,7 @@ import { HiLocationMarker } from 'react-icons/hi'
 
 const Footer = () => {  //bg-[var(--background)]
   return (
-    <section className='w-full h-[100px] flex justify-center gap-[5rem] items-center border-t border-[var(--foreground)]'>
+    <section className='w-full h-[100px] flex justify-center gap-[5rem] items-center border-t border-[var(--foreground)] z-50'>
         <Link href={'/'}>
         <div className='w-[60px] h-[60px] overflow-hidden founded-full'>
             <Image

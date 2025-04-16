@@ -1,13 +1,22 @@
+import Image from 'next/image'
 import React from 'react'
 const page = () => {
   return (
-    <div className='h-[150px] w-full flex flex-col gap-[1rem] items-center mt-[5rem] '>
-            <h1 className='text-[42px] font-semibold font-firago'>TBILISI STATE UNIVERSITY BUILDING INDOOR PLAN</h1>
-            <p className='text-[14px]'>This website helps TSU students easily navigate the campus and find rooms or lecturers` offices. It provides
-               a user-friendly interface to quickly locate classrooms and faculty offices, so students can focus on their 
-               studies.
-            </p>
-          </div>
+    <main className='w-full h-auto mt-6'>
+      <div className='w-full h-full flex flex-col gap-5'>
+        <div className='w-full max-h-[80vh] overflow-hidden'>
+          <Image
+          src={'/images/uni.jpg'}
+          alt='image'
+          width={1500}
+          height={1500}
+          className='w-full h-full object-cover' />
+        </div>
+      </div>
+      <article>
+        some text here
+      </article>
+    </main>
   )
 }
 

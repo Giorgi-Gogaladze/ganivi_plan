@@ -15,13 +15,15 @@ const[showMenu, setShowMenu] = useState(false)
 
 const handleMenu = () => {
     setShowMenu((prev) => !prev);
-    setIsLoginModalOpen(false);
+    setIsLoginModalOpen(false)
 } 
+const removeShowMenu = () => {
+    setShowMenu(false)
+}
 
 const handleThemeToggle = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
-    setShowMenu(false);
-    setIsLoginModalOpen(false);
+    setShowMenu(false)
 }
 useEffect(() => {
     document.body.classList.remove('light-mode', 'dark-mode');
@@ -48,7 +50,9 @@ const openLoginMoadl = () => {
                         className='w-full h-full object-cover object-center rounded-full'
                         />
                     </div>
-                    <h1 className='relative inline-block font-firago font-semibold text-[24px] tracking-[1.2] cursor-pointer group whitespace-nowrap'>
+                    <h1
+                    onClick={removeShowMenu}
+                    className='relative inline-block font-firago font-semibold text-[24px] tracking-[1.2] cursor-pointer group whitespace-nowrap'>
                         GANIVI-PLAN
                         <span className='absolute left-0 bottom-[-5px] h-[2px] w-0 bg-[var(--foreground)] transition-all duration-300 group-hover:w-full'></span>
                     </h1>

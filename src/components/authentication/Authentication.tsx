@@ -8,7 +8,7 @@ const Authentication:React.FC<Props>= ({openLoginMoadl}) => {
   return (
     <main 
     onClick={openLoginMoadl}
-    className='rlaltive w-full min-h-[80vh] bg-[var(--blurrer-bg)] backdrop-blur-sm mt-6 flex  justify-center items-center z-40'>
+    className='rlaltive w-full min-h-[95vh] bg-[var(--blurrer-bg)] backdrop-blur-sm mt-6 flex  justify-center items-center z-40'>
         <div 
         onClick={(e) => e.stopPropagation()}
         className='w-[400px]  h-[350px] flex flex-col items-center justify-around bg-[var(--basic)] 
