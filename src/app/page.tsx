@@ -36,7 +36,7 @@ const page = () => {
         </div>
       </div>
       <article>
-        some text here
+        some more design here, but for later, cause i didn`t think of anything
       </article>
     </main>
   )

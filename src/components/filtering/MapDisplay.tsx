@@ -1,5 +1,7 @@
 'use client'
+import Image from 'next/image';
 import React, { useState } from 'react'
+import FloorOne from '../floors/FloorOne';
 interface Floors {
     id: number;
     name: string;
@@ -17,19 +19,22 @@ const MapDisplay:React.FC<Props>= ({floors}) => {
 
   return (
     <div className='flex flex-col gap-[4rem] items-center w-full h-full pt-[4rem]'>
-          <main className='w-full h-full p-[2rem] '>
-            <div className='flex gap-4 justify-end'>
+          <article className='w-full h-full  '>
+            <div className='flex  justify-between'>
               {floors.map((floor) => (
                 <button 
                 key={floor.id}
-                className='floor-button'>
-                  {`Floor ${floor.name}`}
+                className='floor-button font-firago text-[12px] font-semibold '>
+                  {`${floor.name} სართული`}
                 </button>
               ))}
             </div>
 
-            <section className='grid grid-cols-3 mt-[5rem] mb-[5rem]'>
-              <div className='relative col-span-1 flex flex-col gap-0'>
+            <section className=' mt-[5rem] mb-[5rem]'>
+
+                <FloorOne />
+
+              <div className='relative flex flex-col gap-0'>
                   <div 
                   onClick={() => handleModalOpen('route')}
                   className={`filtering-button ${openModal === 'route' ? 'bg-blue-500 text-white' : ''}`}>
@@ -47,7 +52,7 @@ const MapDisplay:React.FC<Props>= ({floors}) => {
                     Lecturer`s office
                   </div>
                     {openModal === 'office' && (
-                        <div className='bg-[var(--background)] w-[180px] h-[180px]
+                        <div className='bg-[var(--background)] w-[150px] h-[180px]
                         border border-blue-500 rounded-[8px] flex flex-col gap-[1rem] p-[1rem]'>
                             <form className='flex flex-col justify-around items-center gap-[0.5rem]'>
                                 <input 
@@ -77,15 +82,15 @@ const MapDisplay:React.FC<Props>= ({floors}) => {
                   {openModal === 'table' &&(
                     <div
                     onClick={() => handleModalOpen('table')} 
-                    className='bg-[var(--background)] w-[180px] h-[180px]
+                    className='bg-[var(--background)] w-[150px] h-[180px]
                     border border-blue-500 rounded-[8px] flex flex-col gap-[1rem] p-[1rem]'>
                       Log In First
                     </div>
                   )}
-              </div>
-              <p>the builidng paln will be there, sike💀</p>
+                </div>
+
             </section>
-          </main>
+          </article>
       </div>
   )
 }

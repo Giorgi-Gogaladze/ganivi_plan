@@ -24,7 +24,7 @@ const AboutUs = () => {
             — and for first-year students, its basically a rite of passage to get lost in it. With all the
             winding hallways, unexpected turns, and lookalike doors, finding your classroom can be a daily 
             challenge.<br />
-            Thats exactly why we created this project. Our indoor plan helps you explore the building
+            Thats exactly why we created this website. Our indoor plan helps you explore the building
             with ease, showing you exactly where you need to go without the guesswork. No more wandering, no 
             more panicking between lectures — just a clear path through the maze, right at your fingertips.
             </p>

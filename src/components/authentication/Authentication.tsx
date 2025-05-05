@@ -8,6 +8,8 @@ interface Props {
 
 const Authentication:React.FC<Props>= ({openLoginMoadl}) => {
 const[shownPass, setShownPass] = useState<true | false>(false);
+const[username,setUsername] = useState<string>('');
+const[password,setPassword] = useState<string>('');
 
 const handleTypeChange = (e: React.MouseEvent<HTMLButtonElement>) => {
   e.preventDefault();
@@ -38,17 +40,26 @@ const handleTypeChange = (e: React.MouseEvent<HTMLButtonElement>) => {
             <form 
             className='relative text-center w-full flex flex-col items-center gap-4 '>
                 <input 
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
                 type="text"
                 placeholder='Username'
+                autoComplete='off'
                 className='flex items-center justify-center w-[220px] h-[40px] border rounded-full 
-                border-blue-400 text-[var(--second-text-color)] text-center placeholder:text-center'  />
+                border-blue-400 text-[var(--second-text-color)] text-center placeholder:text-center
+                focus:outline-none focus:ring-0'  />
 
                 <input 
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
                 type={shownPass ? 'text' : 'password'}
                 placeholder='Password'
+                autoComplete='off'
                 className='flex items-center justify-center w-[220px] h-[40px] border rounded-full 
-                border-blue-400 text-[var(--second-text-color)] text-center placeholder:text-center'/>
+                border-blue-400 text-[var(--second-text-color)] text-center placeholder:text-center
+                focus:outline-none focus:ring-0 '/>
                 <button 
+                type='button'
                 onClick={handleTypeChange}
                 className='absolute bottom-[11px] right-[102px] text-black text-[18px] '>
                   {shownPass ? <LuEye /> : <LuEyeClosed />}
