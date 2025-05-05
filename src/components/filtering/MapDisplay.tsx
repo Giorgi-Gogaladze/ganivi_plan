@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react'
 import FloorOne from '../floors/FloorOne';
+import FloorTwo from '../floors/FloorTwo';
 interface Floors {
     id: number;
     name: string;
@@ -32,7 +33,8 @@ const MapDisplay:React.FC<Props>= ({floors}) => {
 
             <section className=' mt-[5rem] mb-[5rem]'>
 
-                <FloorOne />
+                {/* <FloorOne /> */}
+                <FloorTwo />
 
               <div className='relative flex flex-col gap-0'>
                   <div 
