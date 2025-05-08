@@ -2,6 +2,7 @@ import MainPgButton from '@/assets/MainPgButton'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { PropagateLoader } from 'react-spinners'
 const page = () => {
   return (
     <main className='w-full h-auto mt-6 z-0'>

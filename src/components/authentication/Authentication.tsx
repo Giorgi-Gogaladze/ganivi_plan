@@ -5,7 +5,6 @@ interface Props {
   openLoginMoadl: () => void;
 }
 
-
 const Authentication:React.FC<Props>= ({openLoginMoadl}) => {
 const[shownPass, setShownPass] = useState<true | false>(false);
 const[username,setUsername] = useState<string>('');
@@ -25,7 +24,7 @@ const handleTypeChange = (e: React.MouseEvent<HTMLButtonElement>) => {
         className='w-[400px]  h-[350px] flex flex-col items-center justify-around bg-[var(--basic)] 
         shadow-lg py-[30px] gap-4 z-50'>
             <div className='flex flex-col items-center justify-center gap-4'>
-                <h1 className='text-[var(--background)] font-firago text-[32px] tracking-[0.1rem] font-extralight'>AUTHENTICATE</h1>
+                <h1 className='text-[var(--background)] font-firago text-[32px] tracking-[0.1rem] font-extralight'>AUTHENTICATATION</h1>
                 <p 
                 className='text-[var(--second-text-color)] font-sans text-[12px]  font-extralight'>
                     Please enter your 
@@ -42,7 +41,7 @@ const handleTypeChange = (e: React.MouseEvent<HTMLButtonElement>) => {
                 <input 
                 onChange={(e) => setUsername(e.target.value)}
                 value={username}
-                type="text"
+                type="number"
                 placeholder='Username'
                 autoComplete='off'
                 className='flex items-center justify-center w-[220px] h-[40px] border rounded-full 

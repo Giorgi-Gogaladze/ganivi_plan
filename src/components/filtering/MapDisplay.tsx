@@ -26,7 +26,7 @@ const MapDisplay:React.FC<Props>= ({floors}) => {
                 <button 
                 key={floor.id}
                 className='floor-button font-firago text-[12px] font-semibold '>
-                  {`${floor.name} სართული`}
+                  {` Floor ${floor.name}`}
                 </button>
               ))}
             </div>
